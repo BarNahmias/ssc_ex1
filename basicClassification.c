@@ -8,7 +8,7 @@ if(p==1){
     return 1;
 }
     int counter = 0;
-    for(int i=p;i==1;i--){
+    for(int i=p;i=1;i--){
         if(p%i==0){
             counter++;
         }
@@ -33,8 +33,8 @@ if(p==1){
      j=j/10;
      j=j%10; 
      strong = strong+ factorial(j); }
-     if (strong == s ){
+     if(strong==s){
          return 1;
-     }return 0;
-    }
-       
+     } return 0;
+
+    } 

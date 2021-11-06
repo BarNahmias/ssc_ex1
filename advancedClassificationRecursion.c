@@ -11,8 +11,12 @@ int isArmstrong(int a){
      j=j/10;
      j=j%10;
      exponent ++;}
-return isArmstrongRec( a, exponent);
-}
+     int ans=isArmstrongRec( a, exponent);
+     if(ans==a){
+         return 1;
+     }
+    return 0;
+    }
 
 int isArmstrongRec(int a, int b){
          if(a>0)

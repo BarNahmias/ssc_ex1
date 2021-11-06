@@ -28,7 +28,7 @@ int isArmstrong(int i){
     while (r != 0) {
         rest = r % 10;
         polirev = polirev * 10 + rest;
-        r /= 10;
+        r = r/10;
     }
     if (polirev == p){
         return 1;}
