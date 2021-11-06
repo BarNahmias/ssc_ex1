@@ -8,13 +8,13 @@ FLAGS= -Wall -g
 all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec 
 
 mains: $(OBJECTS_MAIN) libclassrec.a 
-	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a   
+	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a   -lm
 
 maindloop: $(OBJECTS_MAIN) libclassloops.so 
-	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so 
+	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so -lm
 	
 maindrec: $(OBJECTS_MAIN) libclassrec.so 
-	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so  
+	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so  -lm
 
 libclassloops.a: $(OBJECTS_LIBL)
 	$(AR) -rcs libclassloops.a $(OBJECTS_LIBL)
@@ -37,7 +37,7 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c advancedCla
 	$(CC) $(FLAGS) -c advancedClassificationRecursion.c -lm
 
 basicClassification.o: basicClassification.c basicClassification.h
-	$(CC) $(FLAGS) -c basicClassification.c -lm
+	$(CC) $(FLAGS) -c basicClassification.c 
 
 
 main.o: main.c NumClass.h   
