@@ -8,13 +8,13 @@ FLAGS= -Wall -g
 all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec 
 
 mains: $(OBJECTS_MAIN) libclassrec.a 
-	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a   -lm
+	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a   
 
 maindloop: $(OBJECTS_MAIN) libclassloops.so 
-	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so -lm
+	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so 
 	
 maindrec: $(OBJECTS_MAIN) libclassrec.so 
-	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so  -lm
+	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so  
 
 libclassloops.a: $(OBJECTS_LIBL)
 	$(AR) -rcs libclassloops.a $(OBJECTS_LIBL)
