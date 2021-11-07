@@ -2,23 +2,30 @@
 #include <math.h>
 #include "advancedClassificationLoop.h"
 
+int exponen(int i){
+    int exponent = 0;
+    int j=i;
+    while(j!=0){
+      j=j/10;
+     exponent= exponent +1;
+    }return exponent;}
+
+
+
 int isArmstrong(int i){
+    int exponent = exponen(i);
+    int e;
     int j=i;
     int sum=0;
-    int exponent = 0;
-    while(j<=0){
+    while(j!=0){
+     e=j%10;
+     sum=sum+pow(e,exponent); 
      j=j/10;
-     j=j%10;
-     exponent ++;
-    }
-    while(j<=0){
-     j=j/10;
-     j=j%10;
-    sum=sum+pow(j,exponent); 
-    }
-    if(sum==i){
-       } return 1;
-    return 0; } 
+     if(sum==i){
+      return 1; }
+    } 
+    return 0; }  
+
 
     int isPalindrome(int p){
     int r=p;
