@@ -6,17 +6,17 @@ OBJECTS_LIBR =advancedClassificationRecursion.o basicClassification.o
 
 all: libclassrec.a libclassloops.a  libclassloops.so libclassrec.so 
 
-mains: mains1
-mains1: $(OBJECTS_MAIN) libclassrec.a 
-	$(CC) $(FLAGS) -o mains1 $(OBJECTS_MAIN) libclassrec.a   -lm
+mains: mains
+mains: $(OBJECTS_MAIN) libclassrec.a 
+	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a   -lm
 
-maindloop: maindloop1
-maindloop1: $(OBJECTS_MAIN) libclassloops.so 
-	$(CC) $(FLAGS) -o maindloop1 $(OBJECTS_MAIN) ./libclassloops.so -lm
+maindloop: maindloop
+maindloop: $(OBJECTS_MAIN) libclassloops.so 
+	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so -lm
 	
-maindrec: maindrec1 
-maindrec1: $(OBJECTS_MAIN) libclassrec.so 
-	$(CC) $(FLAGS) -o maindrec1 $(OBJECTS_MAIN) ./libclassrec.so  -lm
+maindrec: maindrec 
+maindrec: $(OBJECTS_MAIN) libclassrec.so 
+	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so  -lm
 
 loops: libclassloops.a
 libclassloops.a: $(OBJECTS_LIBL) 
