@@ -1,6 +1,6 @@
 #include <stdio.h> 
 #include <math.h>
-#include "advancedClassificationLoop.h"
+#include "NumClass.h"
 
 int exponen(int i){
     int exponent = 0;
