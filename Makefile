@@ -4,17 +4,15 @@ OBJECTS_MAIN=main.o
 OBJECTS_LIBL=advancedClassificationLoop.o  basicClassification.o 
 OBJECTS_LIBR =advancedClassificationRecursion.o basicClassification.o 
 
-all: libclassrec.a libclassloops.a  libclassloops.so libclassrec.so 
+all: mains maindloop maindrec loops recursives loopd recursived  
 
-mains: mains
+
 mains: $(OBJECTS_MAIN) libclassrec.a 
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a   -lm
 
-maindloop: maindloop
 maindloop: $(OBJECTS_MAIN) libclassloops.so 
 	$(CC) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so -lm
-	
-maindrec: maindrec 
+	 
 maindrec: $(OBJECTS_MAIN) libclassrec.so 
 	$(CC) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so  -lm
 
@@ -49,7 +47,7 @@ basicClassification.o: basicClassification.c basicClassification.h
 main.o: main.c NumClass.h  
 	$(CC) $(FLAGS) -c main.c -lm
 
-.PHONY: clean all recursives recursived loopd mains maindloop maindrec
+.PHONY: clean all mains maindloop maindrec loops recursives loopd recursived 
 
 clean:
-	rm -f *.o *.a *.so recursives recursived loopd mains maindloop maindrec
+	rm -f *.o *.a *.so mains maindloop maindrec loops recursives loopd recursived 
